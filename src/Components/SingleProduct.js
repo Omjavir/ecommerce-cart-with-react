@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { CartState } from './Context';
+import './styles.css'
 
 const SingleProduct = () => {
     const { state, getSingleProduct, dispatch } = CartState();
@@ -13,11 +14,11 @@ const SingleProduct = () => {
 
     return (
         <div style={{ width: '100%', height: '100vh' }}>
-            <div style={{ display: 'flex', marginTop: '30px' }}>
-                <div style={{ width: '60%', height: '80vh', boxShadow: '0px 2px 5px grey', marginLeft: '20px' }}>
+            <div className='prod-page-div' style={{ display: 'flex', marginTop: '30px' }}>
+                <div className='prod-page-img' style={{ width: '60%', height: '80vh', boxShadow: '0px 2px 5px grey', marginLeft: '20px' }}>
                     <img src={image} style={{ width: '90%', height: '80vh', marginLeft: '30px' }} alt="Product" />
                 </div>
-                <div style={{ width: '70%', height: '80vh' }}>
+                <div className='prod-page-info' style={{ width: '70%', height: '80vh' }}>
                     <p style={{ fontSize: '30px', marginLeft: '15px', marginBottom: '40px' }}>{title}</p>
                     <p style={{ fontSize: '25px', marginLeft: '15px', marginBottom: '40px' }}>{category}</p>
                     <p style={{ fontSize: '30px', marginLeft: '15px', marginBottom: '40px' }}>124 reviews</p>

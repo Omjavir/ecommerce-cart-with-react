@@ -1,0 +1,30 @@
+@media only screen and (max-width: 600px) {
+  .prod-page-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .prod-page-img {
+    width: 100%;
+    height: 60vh;
+  }
+  .prod-page-img img {
+    width: 100%;
+    height: 60vh;
+  }
+  .prod-page-info {
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+  }
+  .cart-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-prod-div {
+    width: 100%;
+  }
+  .cart-sub{
+    width: 50%;
+    font-size: 15px;
+  }
+}

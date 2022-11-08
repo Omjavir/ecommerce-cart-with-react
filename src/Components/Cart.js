@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from './Context';
+import './styles.css'
 
 const Cart = () => {
   const { state, dispatch } = CartState();
@@ -22,9 +23,9 @@ const Cart = () => {
     setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0))
   }, [cart])
   return (
-    <div style={{ display: 'flex', marginTop: '30px' }}>
+    <div className='cart-div' style={{ display: 'flex', marginTop: '30px' }}>
       {cart.length > 0 ?
-        (<div style={{ width: '80%' }}>
+        (<div className='cart-prod-div' style={{ width: '80%' }}>
           {cart.map(carItem => (
             <div style={{ display: "flex", boxShadow: "0px 3px 10px grey", width: "95%", justifyContent: 'space-between', margin: '20px' }} key={carItem.id}>
               <img src={carItem.image} style={{ height: "20vh", width: '20%', padding: '10px' }} alt="" />
@@ -41,7 +42,7 @@ const Cart = () => {
         :
         (<b style={{ width: '80%', fontSize: '30px', textAlign: 'center' }}>Cart is empty</b>)
       }
-      <div style={{ width: '20%', textAlign: 'center', fontSize: '25px', height: '100vh', boxShadow: "0px 3px 10px grey" }}>
+      <div className='cart-sub' style={{ width: '20%', textAlign: 'center', fontSize: '25px', height: '100vh', boxShadow: "0px 3px 10px grey" }}>
         <b>Subtotal<br />₹ {Math.round(total)}/-</b>
         <br />
         <button style={{ backgroundColor: "purple", padding: '10px', fontSize: '20px', borderRadius: '10px', textAlign: 'center', marginLeft: '20px', marginTop: '20px', color: 'whitesmoke' }} onClick={() => clearCart()}>Clear Cart</button>
