@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useContext, useEffect, useReducer } from 'react'
+import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
 import { cartReducer } from '../Reducer/Reducer'
 
 const Cart = createContext();

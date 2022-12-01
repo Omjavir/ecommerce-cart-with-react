@@ -9,26 +9,25 @@ const Products = () => {
   const { products } = state;
 
   return (
-    <div style={{ width: "85%", display: "flex", flexWrap: 'wrap', margin: 'auto' }}>
+    <div className='product' style={{ width: "100%", display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
       {products.map((prod, i) => (
-        <Link to={`product/${prod.id}`}><div className='prod-div' style={{ width: '300px', height: "460px", textAlign: 'center', margin: '10px', boxShadow: '0px 2px 5px grey' }} key={i}>
-          <img src={prod.image} style={{ width: "100%", height: '30vh' }} alt="" className='prod-img' />
-          <p style={{ fontSize: "20px" }} className='prod-div big-font'>{prod.title.slice(0, 25)}...</p>
-          <p style={{ fontSize: "15px" }} className='prod-div small-font'>{prod.description.slice(0, 35)}...</p>
-          <p style={{ fontSize: "15px" }} className='prod-div small-font'>{prod.category}</p>
-          <p style={{ fontSize: "15px" }} className='prod-div small-font'>{prod.rating.count} reviews</p>
-          <p style={{ fontSize: "20px" }} className='prod-div big-font'>₹{Math.round(prod.price)}/-</p>
-          {/* <button style={{ backgroundColor: "blueviolet", padding: '6px', color: 'white', fontSize: '20px', borderRadius: '10px' }} onClick={() => dispatch({
-            type: "ADD_TO_CART",
-            payload: {
-              id: prod.id,
-              title: prod.title,
-              image: prod.image,
-              price: prod.price,
-              qty: 1
-            }
-          })}>Add to Cart</button> */}
-        </div></Link>
+        <Link to={`product/${prod.id}`}>
+          <div className="max-w-sm bg-white border justify-center border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-10">
+            <div className='justify-center'>
+              <img className="rounded-t-lg h-96 p-10" src={prod.image} alt="" />
+            </div>
+            <div className="p-5">
+              <div>
+                <h6 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white no-underline">{prod.title.slice(0, 45)}....</h6>
+              </div>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{prod.category}</p>
+              <p className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                ₹{Math.round(prod.price)}/-
+              </p>
+            </div>
+          </div>
+
+        </Link>
       ))
       }
     </div >

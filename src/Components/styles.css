@@ -1,4 +1,10 @@
 @media only screen and (max-width: 600px) {
+  .product {
+    width: 75%;
+  }
+  .filter {
+    width: 25%;
+  }
   .prod-page-div {
     display: flex;
     flex-direction: column;
@@ -23,7 +29,7 @@
   .cart-prod-div {
     width: 100%;
   }
-  .cart-sub{
+  .cart-sub {
     width: 50%;
     font-size: 15px;
   }
